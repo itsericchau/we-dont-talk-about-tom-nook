@@ -11,11 +11,7 @@ require_relative "models/users"
 require_relative "helpers/session_helper"
 
 get "/" do
-  fishes_api = HTTParty.get("https://acnhapi.com/v1/fish/")
-  erb :index,
-      locals: {
-        fishes_api: fishes_api,
-      }
+  erb :index
 end
 
 get "/sign_up" do
@@ -48,4 +44,31 @@ end
 delete "/sessions" do
   session["user_id"] = nil
   redirect "/"
+end
+
+get "/fishes" do
+  fish = params["fish"]
+  fishes_api = HTTParty.get("https://acnhapi.com/v1/fish/#{fish}")
+  erb :fishes,
+      locals: {
+        fishes_api: fishes_api,
+      }
+end
+
+get "/villagers" do
+  villager = params["villagers"]
+  villagers_api = HTTParty.get("https://acnhapi.com/v1/villagers/#{villager}")
+  erb :villagers,
+      locals: {
+        villagers_api: villagers_api,
+      }
+end
+
+get "/bugs" do
+  bug = params["bugs"]
+  bugs_api = HTTParty.get("https://acnhapi.com/v1/bugs/#{bug}")
+  erb :bugs,
+      locals: {
+        bugs_api: bugs_api,
+      }
 end

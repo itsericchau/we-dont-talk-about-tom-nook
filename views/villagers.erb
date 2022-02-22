@@ -1,0 +1,10 @@
+<h1>Villagers Page</h1>
+<a href="/">Return Home</a>
+<% villagers_api.each do |villagers| %>
+  <p>
+    <%= p villagers[1]["file-name"] %>
+    <img src="<%= villagers[1]["icon_uri"] %>" alt="">
+    <button>Add to wishlist</button>
+    <button>Add to collected</button>
+  </p>
+<%end%>

@@ -1,1 +1,10 @@
-<h1>hello world</h1>
+<h1>We Hate Tom Nook</h1>
+<h2>Database</h2>
+<a href="/sign_up">Sign up</a>
+<a href="/sign_in">Log in</a>
+<% fishes_api.each do |fish| %>
+  <%= p fish[1]["file-name"] %>
+  <img src="<%= fish[1]["image_uri"] %>" alt="<%= p fish[1]["file-name"] %>">
+  <button>Add to wishlist</button>
+  <button>Add to collected</button>
+<%end%>

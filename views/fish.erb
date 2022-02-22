@@ -1,0 +1,9 @@
+<h1>Fish Page</h1>
+<% fishes_api.each do |fish| %>
+  <p>
+    <%= p fish[1]["file-name"] %>
+    <img src="<%= fish[1]["image_uri"] %>" alt="">
+    <button>Add to wishlist</button>
+    <button>Add to collected</button>
+  </p>
+<%end%>

@@ -1,5 +1,5 @@
 require "sinatra"
-require "sinatra/realoder" if development?
+require "sinatra/reloader" if development?
 require "pry" if development?
 
 require_relative "db/db"

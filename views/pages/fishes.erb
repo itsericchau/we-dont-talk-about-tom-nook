@@ -2,7 +2,7 @@
 <a href="/">Return Home</a>
 <% fishes_api.each do |fish| %>
   <p>
-    <%= p fish[1]["file-name"] %>
+    <%= p fish[1]["name"]["name-USen"] %>
     <img src="<%= fish[1]["icon_uri"] %>" alt="">
     <button>Add to wishlist</button>
     <button>Add to collected</button>

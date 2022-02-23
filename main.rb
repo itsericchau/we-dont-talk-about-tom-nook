@@ -12,12 +12,12 @@ require_relative "helpers/session_helper"
 require_relative "controllers/users_controller"
 
 get "/" do
-  erb :index
+  erb :'pages/index'
 end
 
 get "/fishes" do
-  fish = params["fish"]
-  fishes_api = HTTParty.get("https://acnhapi.com/v1/fish/#{fish}")
+  # fish = params["fish"]
+  fishes_api = HTTParty.get("https://acnhapi.com/v1/fish/#{}")
   erb :'pages/fishes',
       locals: {
         fishes_api: fishes_api,
@@ -25,8 +25,8 @@ get "/fishes" do
 end
 
 get "/villagers" do
-  villager = params["villagers"]
-  villagers_api = HTTParty.get("https://acnhapi.com/v1/villagers/#{villager}")
+  # villager = params["villagers"]
+  villagers_api = HTTParty.get("https://acnhapi.com/v1/villagers/#{}")
   erb :'pages/villagers',
       locals: {
         villagers_api: villagers_api,
@@ -34,8 +34,8 @@ get "/villagers" do
 end
 
 get "/bugs" do
-  bug = params["bugs"]
-  bugs_api = HTTParty.get("https://acnhapi.com/v1/bugs/#{bug}")
+  # bug = params["bugs"]
+  bugs_api = HTTParty.get("https://acnhapi.com/v1/bugs/#{}")
   erb :'pages/bugs',
       locals: {
         bugs_api: bugs_api,

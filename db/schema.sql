@@ -5,3 +5,8 @@ CREATE TABLE users(
     email TEXT,
     password_digest TEXT
 );
+CREATE TABLE bugs(
+    bug_id SERIAL PRIMARY KEY,
+    bug_name TEXT,
+    icon_url TEXT
+);

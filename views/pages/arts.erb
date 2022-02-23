@@ -1,0 +1,10 @@
+<h1>Arts Page</h1>
+<a href="/">Return Home</a>
+<% arts_api.each do |art| %>
+  <p>
+    <%= p art[1]['name']["name-USen"]  %>
+    <img src="<%= art[1]["icon_uri"] %>" alt="">
+    <button>Add to wishlist</button>
+    <button>Add to collected</button>
+  </p>
+<%end%>

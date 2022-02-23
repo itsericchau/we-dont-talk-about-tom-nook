@@ -41,3 +41,39 @@ get "/bugs" do
         bugs_api: bugs_api,
       }
 end
+
+get "/fossils" do
+  # fossil = params["fossils"]
+  fossils_api = HTTParty.get("https://acnhapi.com/v1/fossils/#{}")
+  erb :'pages/fossils',
+      locals: {
+        fossils_api: fossils_api,
+      }
+end
+
+get "/arts" do
+  # art = params["arts"]
+  arts_api = HTTParty.get("https://acnhapi.com/v1/art/#{}")
+  erb :'pages/arts',
+      locals: {
+        arts_api: arts_api,
+      }
+end
+
+get "/songs" do
+  # song = params["songs"]
+  songs_api = HTTParty.get("https://acnhapi.com/v1/songs/#{}")
+  erb :'pages/songs',
+      locals: {
+        songs_api: songs_api,
+      }
+end
+
+get "/sea_creatures" do
+  # sea_creature = params["sea_creatures"]
+  sea_creatures_api = HTTParty.get("https://acnhapi.com/v1/sea/#{}")
+  erb :'pages/sea_creatures',
+      locals: {
+        sea_creatures_api: sea_creatures_api,
+      }
+end

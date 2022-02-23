@@ -3,13 +3,14 @@
 <a href="/sign_up">Sign up</a>
 <a href="/log_in">Log in</a>
 <% if logged_in? %>
- <h1>Logged In</h1>
- <form action="/sessions" method="POST">
+  <h1>Logged In</h1>
+  <form action="/sessions" method="POST">
     <input type="hidden" name="_method" value="delete">
     <button>Logout</button>
-<%end%>
-<ul>
-<li><a href="/fishes">Fish</a></li>
-<li><a href="/villagers">Villagers</a></li>
-<li><a href="/bugs">Bugs</a></li>
-</ul>
+    <ul>
+      <li><a href="/fishes">Fish</a></li>
+      <li><a href="/villagers">Villagers</a></li>
+      <li><a href="/bugs">Bugs</a></li>
+    </ul>
+  <% else %>
+  <%end%>

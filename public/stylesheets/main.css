@@ -11,6 +11,7 @@ body {
   margin: 0 auto;
 }
 .navigation_bar_ul {
+  background-color: aquamarine;
   border: 2px solid black;
   padding-left: 0;
   display: flex;
@@ -19,7 +20,14 @@ body {
 }
 .navigation_bar_ul a {
   font-size: 1.5rem;
+  font-family: "Indie Flower", cursive;
   padding: 0 10px 0 10px;
+}
+.navigation_bar_ul li:hover {
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 a {
   text-decoration: none;
@@ -36,6 +44,13 @@ h2 {
   text-align: center;
   margin: 0;
 }
+h1 {
+  font-size: 3rem;
+  font-family: "Mountains of Christmas", cursive;
+}
+h2 {
+  font-family: "Indie Flower", cursive;
+}
 img {
   max-width: 128px;
 }
@@ -44,10 +59,12 @@ img {
   text-align: center;
 }
 .wishlist_items {
+  text-transform: capitalize;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .favourite_items {
+  text-transform: capitalize;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -55,11 +72,12 @@ img {
   text-transform: capitalize;
   margin: 0 auto;
   display: grid;
-  border: 1px solid red;
   justify-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .border {
+  background-color: antiquewhite;
+  border-radius: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
   border: 1px solid brown;
@@ -68,8 +86,20 @@ img {
   text-align: center;
 }
 .border:hover {
-  opacity: 70%;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
+@keyframes pulse {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 10%;
+  }
+}
+
 button:hover {
   opacity: 100%;
   cursor: url(./handpointer1.cur), auto;

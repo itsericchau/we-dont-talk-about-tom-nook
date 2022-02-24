@@ -1,9 +1,9 @@
 <h1>Arts Page</h1>
-<a href="/">Return Home</a>
 <div class="bug_items">
   <% arts_api.each do |art| %>
     <div class="border">
-      <%= p art[1]["name"]["name-USen"] %>
+      <span><%= art[1]["id"] %></span>
+      <%= art[1]["name"]["name-USen"] %>
       <img src="<%= art[1]["image_uri"] %>" alt="">
       <form action="/wishlist_arts" method="POST">
         <input type="hidden" name="art_name" value="<%=art[1]["name"]["name-USen"]%>">

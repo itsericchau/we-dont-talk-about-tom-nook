@@ -1,5 +1,4 @@
 <h1><%= username %>'s Wishlist</h1>
-<a href="/">Return Home</a>
 <div class="wishlist_items">
   <% wishlist.each do |item|%>
     <div class="border">
@@ -19,7 +18,7 @@
       <form action="/favourite_wishlist" method="POST">
         <input type="hidden" name="_method" value="put">
         <input type="hidden" name="id" value="<%=item['id']%>">
-        <button>Add to favourite</button>
+        <button>Add to favourites</button>
       </form>
     </div>
   <%end%>

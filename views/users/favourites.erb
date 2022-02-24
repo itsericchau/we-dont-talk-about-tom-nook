@@ -1,5 +1,4 @@
 <h1><%= username %>'s' Favourites</h1>
-<a href="/">Return Home</a>
 <div class="favourite_items">
   <% favourites.each do |item|%>
     <div class="border">
@@ -8,10 +7,11 @@
       <%= api["name"]["name-JPja"] %>
       <% if (item['item_type'] != 'songs') && (item['item_type'] != 'art') %>
         <img src="<%= api["icon_uri"] %>" alt="">
+        <span><%= api["buy-price"] %> Bells</span>
       <%else%>
         <img src="<%= api["image_uri"] %>" alt="">
+        <span><%= api["price"] %> Bells</span>
       <%end%>
-      <span><%= api["price"] %> Bells</span>
       <span>Catch Phrase: <%= api["catch-phrase"] %></span>
       <form action="/remove_favourites" method="POST">
         <input type="hidden" name="_method" value="delete">

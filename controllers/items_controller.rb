@@ -174,7 +174,7 @@ end
 
 delete "/remove_favourites" do
   id = params["id"]
-  favourite = null
+  favourite = false
   remove_favourite(id, favourite)
   redirect "/favourites"
 end

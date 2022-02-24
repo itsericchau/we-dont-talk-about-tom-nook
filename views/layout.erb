@@ -1,14 +1,30 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>We Hate Tom Nook</title>
-  <link rel='stylesheet' href='/stylesheets/main.css'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-
-  <%= yield %>
-
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>We Hate Tom Nook Database</title>
+    <link rel='stylesheet' href='/stylesheets/main.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <nav class="navigation_bar">
+      <ul class="navigation_bar_ul">
+        <li><a href="/">Homepage</a></li>
+        <% if logged_in? %>
+          <li><a href="/wishlist">Wishlist</a></li>
+          <li><a href="/favourites">Favourites</a></li>
+        <%else%>
+          <li><a href="/">Wishlist</a></li>
+          <li><a href="/">Favourites</a></li>
+        <%end%>
+        <li><a href="/fishes">Fish</a></li>
+        <li><a href="/villagers">Villagers</a></li>
+        <li><a href="/bugs">Bugs</a></li>
+        <li><a href="/arts">Arts</a></li>
+        <li><a href="/songs">Songs</a></li>
+        <li><a href="/sea_creatures">Sea Creatures</a></li>
+      </ul>
+    </nav>
+    <%= yield %>
+  </body>
 </html>

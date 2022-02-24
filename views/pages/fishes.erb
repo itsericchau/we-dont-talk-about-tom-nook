@@ -1,13 +1,15 @@
 <h1>Fishes Page</h1>
 <a href="/">Return Home</a>
-<% fishes_api.each do |fish| %>
-  <p>
-    <%= fish[1]["name"]["name-USen"] %>
-    <img src="<%= fish[1]["icon_uri"] %>" alt="">
-    <form action="/wishlist_fishes" method="POST">
-      <input type="hidden" name="fish_name" value="<%=fish[1]["name"]["name-USen"]%>">
-      <input type="hidden" name="item_id" value="<%= fish[1]["id"] %>">
-      <button>Add to wishlist</button>
-    </form>
-  </p>
-<%end%>
+<div class="bug_items">
+  <% fishes_api.each do |fish| %>
+    <div class="border">
+      <%= fish[1]["name"]["name-USen"] %>
+      <img src="<%= fish[1]["icon_uri"] %>" alt="">
+      <form action="/wishlist_fishes" method="POST">
+        <input type="hidden" name="fish_name" value="<%=fish[1]["name"]["name-USen"]%>">
+        <input type="hidden" name="item_id" value="<%= fish[1]["id"] %>">
+        <button>Add to wishlist</button>
+      </form>
+    </div>
+  <%end%>
+</div>

@@ -4,7 +4,8 @@
   <% wishlist.each do |item|%>
     <div class="border">
       <% api = HTTParty.get("https://acnhapi.com/v1/#{item['item_type']}/#{item['item_id']}") %>
-      <%= api["name"]["name-USen"] %>
+      <%= api["name"]["name-USen"] %><br/>
+      <%= api["name"]["name-JPja"] %>
       <% if (item['item_type'] != 'songs') && (item['item_type'] != 'art') %>
         <img src="<%= api["icon_uri"] %>" alt="">
       <%else%>

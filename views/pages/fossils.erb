@@ -2,9 +2,12 @@
 <a href="/">Return Home</a>
 <% fossils_api.each do |fossil| %>
   <p>
-    <%= p fossil[1]['name']["name-USen"]  %>
-    <img src="<%= fossil[1]["icon_uri"] %>" alt="">
-    <button>Add to wishlist</button>
-    <button>Add to collected</button>
+    <%= p fossil[1]["name"]["name-USen"] %>
+    <img src="<%= fossil[1]["image_uri"] %>" alt="">
+    <form action="/wishlist_fossils" method="POST">
+      <input type="hidden" name="fossil_name" value="<%=fossil[1]["name"]["name-USen"]%>">
+      <input type="hidden" name="item_id" value="<%= fossil[1]["id"] %>">
+      <button>Add to wishlist</button>
+    </form>
   </p>
 <%end%>

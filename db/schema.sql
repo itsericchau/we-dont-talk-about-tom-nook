@@ -39,7 +39,6 @@ CREATE TABLE user_items(
     user_id INTEGER,
     item_id INTEGER,
     item_type TEXT,
-    wishlist BOOLEAN
+    wishlist BOOLEAN,
+    favourite BOOLEAN
 );
-ALTER TABLE user_items
-ADD COLUMN favourite BOOLEAN;

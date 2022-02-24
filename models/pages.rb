@@ -7,7 +7,7 @@ def insert_record(user_id, item_id, item_type, wishlist, favourite = false)
 end
 
 def get_wishlist(user_id)
-  run_sql("SELECT * FROM user_items WHERE user_id = $1 AND wishlist = true ORDER BY favourite DESC", [user_id])
+  run_sql("SELECT * FROM user_items WHERE user_id = $1 AND wishlist = true ORDER BY favourite DESC, item_type", [user_id])
 end
 
 def delete_wishlist(id)

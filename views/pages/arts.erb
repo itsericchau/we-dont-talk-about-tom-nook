@@ -1,25 +1,13 @@
 <h1>Arts Page</h1>
-
-<form action="/arts" method="POST">
-<label for="">Search</label>
-<input type="text" name="art">
-<button>Search</button>
-</form>
-
 <a href="/">Return Home</a>
 <% arts_api.each do |art| %>
   <p>
-    <%= p art[1]['name']["name-USen"] %>
-    <img src="<%= art[1]["icon_uri"] %>" alt="">
-    
-    <form action="/wishlist_art" method="POST">
-    <input type="hidden" name="name" value="<%= arts_api[0][1]['name']["name-USen"] %>">
-    <input type="hidden" name="id" value="<%= arts_api[0][1]['id'] %>">
-    <input type="hidden" name="item_type" value="art">
-    <input type="hidden" name="wishlist" value="true">
-    <button>Add to wishlist</button>
+    <%= p art[1]["name"]["name-USen"] %>
+    <img src="<%= art[1]["image_uri"] %>" alt="">
+    <form action="/wishlist_arts" method="POST">
+      <input type="hidden" name="art_name" value="<%=art[1]["name"]["name-USen"]%>">
+      <input type="hidden" name="item_id" value="<%= art[1]["id"] %>">
+      <button>Add to wishlist</button>
     </form>
-    
-    <button>Add to collected</button>
   </p>
 <%end%>

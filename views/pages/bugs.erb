@@ -2,9 +2,12 @@
 <a href="/">Return Home</a>
 <% bugs_api.each do |bug| %>
   <p>
-    <%= p bug[1]['name']["name-USen"]  %>
+    <%= p bug[1]["name"]["name-USen"] %>
     <img src="<%= bug[1]["icon_uri"] %>" alt="">
-    <button>Add to wishlist</button>
-    <button>Add to collected</button>
+    <form action="/wishlist_bugs" method="POST">
+      <input type="hidden" name="bug_name" value="<%=bug[1]["name"]["name-USen"]%>">
+      <input type="hidden" name="item_id" value="<%= bug[1]["id"] %>">
+      <button>Add to wishlist</button>
+    </form>
   </p>
 <%end%>

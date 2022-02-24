@@ -4,7 +4,11 @@
   <p>
     <% api = HTTParty.get("https://acnhapi.com/v1/#{item['item_type']}/#{item['item_id']}") %>
     <%= api["name"]["name-USen"] %>
-    <img src="<%= api["icon_uri"] %>" alt="">
+    <% if (item['item_type'] != 'songs') && (item['item_type'] != 'art') %>
+      <img src="<%= api["icon_uri"] %>" alt="">
+    <%else%>
+      <img src="<%= api["image_uri"] %>" alt="">
+    <%end%>
     <form action="/delete_wishlist" method="POST">
       <input type="hidden" name="_method" value="delete">
       <input type="hidden" name="id" value="<%=item['id']%>">

@@ -1,10 +1,19 @@
 <h1><%= username %>'s' Wishlist</h1>
-
 <a href="/">Return Home</a>
 <% wishlist.each do |item|%>
-<p>
-<% api = HTTParty.get("https://acnhapi.com/v1/#{item['item_type']}/#{item['id']}") %>
-<%= api["name"]["name-USen"] %>
+  <p>
+    <% api = HTTParty.get("https://acnhapi.com/v1/#{item['item_type']}/#{item['item_id']}") %>
+    <%= api["name"]["name-USen"] %>
     <img src="<%= api["icon_uri"] %>" alt="">
-</p>
+    <form action="/delete_wishlist" method="POST">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="id" value="<%=item['id']%>">
+      <button>Remove from wishlist</button>
+    </form>
+    <form action="/favourite_wishlist" method="POST">
+      <input type="hidden" name="_method" value="put">
+      <input type="hidden" name="id" value="<%=item['id']%>">
+      <button>Add to favourite</button>
+    </form>
+  </p>
 <%end%>

@@ -1,0 +1,14 @@
+<h1><%= username %>'s' Favourites</h1>
+<a href="/">Return Home</a>
+<% favourites.each do |item|%>
+  <p>
+    <% api = HTTParty.get("https://acnhapi.com/v1/#{item['item_type']}/#{item['item_id']}") %>
+    <%= api["name"]["name-USen"] %>
+    <img src="<%= api["icon_uri"] %>" alt="">
+    <form action="/remove_favourites" method="POST">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="id" value="<%=item['id']%>">
+      <button>Remove from favourites</button>
+    </form>
+  </p>
+<%end%>

@@ -1,7 +1,5 @@
 <h1>We Hate Tom Nook</h1>
 <h2>Database</h2>
-<a href="/sign_up">Sign up</a>
-<a href="/log_in">Log in</a>
 <% if logged_in? %>
   <h1>Logged In</h1>
   <form action="/sessions" method="POST">
@@ -9,13 +7,16 @@
     <button>Logout</button>
     <ul>
       <li><a href="/fishes">Fish</a></li>
-      <%# <li><a href="/villagers">Villagers</a></li>
+      <li><a href="/villagers">Villagers</a></li>
       <li><a href="/bugs">Bugs</a></li>
       <li><a href="/fossils">Fossils</a></li>
       <li><a href="/arts">Arts</a></li>
       <li><a href="/songs">Songs</a></li>
-      <li><a href="/sea_creatures">Sea Creatures</a></li> %>
+      <li><a href="/sea_creatures">Sea Creatures</a></li>
       <li><a href="/wishlist">Wishlist</a></li>
+      <li><a href="/favourites">Favourites</a></li>
     </ul>
   <% else %>
+    <a href="/sign_up">Sign up</a>
+    <a href="/log_in">Log in</a>
   <%end%>

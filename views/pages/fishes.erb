@@ -4,13 +4,11 @@
   <p>
     <%= fish[1]["name"]["name-USen"] %>
     <img src="<%= fish[1]["icon_uri"] %>" alt="">
-
     <form action="/wishlist_fishes" method="POST">
-    <input type="hidden" name="fish_name" value="<%=fish[1]["name"]["name-USen"]%>">
-    <input type="hidden" name="item_id" value="<%= fish[1]["id"] %>">
-    <button>Add to wishlist</button>
+      <input type="hidden" name="fish_name" value="<%=fish[1]["name"]["name-USen"]%>">
+      <input type="hidden" name="item_id" value="<%= fish[1]["id"] %>">
+      <button>Add to wishlist</button>
     </form>
     <%# <button>Add to collected</button> %>
   </p>
 <%end%>
-

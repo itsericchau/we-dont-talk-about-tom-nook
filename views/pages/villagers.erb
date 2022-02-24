@@ -2,13 +2,15 @@
 <div class="bug_items">
   <% villagers_api.each do |villager| %>
     <div class="border">
-      <%= p villager[1]["name"]["name-USen"] %>
+      <%= villager[1]["name"]["name-USen"] %>
       <img src="<%= villager[1]["icon_uri"] %>" alt="">
-      <form action="/wishlist_villagers" method="POST">
-        <input type="hidden" name="villager_name" value="<%=villager[1]["name"]["name-USen"]%>">
-        <input type="hidden" name="item_id" value="<%= villager[1]["id"] %>">
-        <button>Add to wishlist</button>
-      </form>
+      <% if !!logged_in? %>
+        <form action="/wishlist_villagers" method="POST">
+          <input type="hidden" name="villager_name" value="<%=villager[1]["name"]["name-USen"]%>">
+          <input type="hidden" name="item_id" value="<%= villager[1]["id"] %>">
+          <button>Add to wishlist</button>
+        </form>
+      <%end%>
     </div>
   <%end%>
 </div>

@@ -21,3 +21,11 @@ end
 def find_username_by_id(user_id)
   run_sql("SELECT username FROM users WHERE id = $1", [user_id])[0]["username"]
 end
+
+def find_email_by_user_id(user_id)
+  run_sql("SELECT email FROM users WHERE id = $1", [user_id])[0]["email"]
+end
+
+def update_email(user_id, email)
+  run_sql("UPDATE users SET email = $2 WHERE id = $1", [user_id, email])
+end

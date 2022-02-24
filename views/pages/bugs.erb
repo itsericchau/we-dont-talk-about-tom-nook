@@ -4,11 +4,13 @@
     <div class="border">
       <%= bug[1]["name"]["name-USen"] %>
       <img src="<%= bug[1]["icon_uri"] %>" alt="">
-      <form action="/wishlist_bugs" method="POST">
-        <input type="hidden" name="bug_name" value="<%=bug[1]["name"]["name-USen"]%>">
-        <input type="hidden" name="item_id" value="<%= bug[1]["id"] %>">
-        <button>Add to wishlist</button>
-      </form>
+      <% if !!logged_in? %>
+        <form action="/wishlist_bugs" method="POST">
+          <input type="hidden" name="bug_name" value="<%=bug[1]["name"]["name-USen"]%>">
+          <input type="hidden" name="item_id" value="<%= bug[1]["id"] %>">
+          <button>Add to wishlist</button>
+        </form>
+      <%end%>
     </div>
   <%end%>
 </div>

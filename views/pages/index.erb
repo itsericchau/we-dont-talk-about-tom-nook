@@ -1,7 +1,10 @@
-<h1>We Hate Tom Nook</h1>
-<h2>Database for collectors</h2>
+<h1 class="tom_nook">We Hate Tom Nook</h1>
+<h2>Database for collectors of Animal Crossing: New Horizons</h2>
 <% if logged_in? %>
-  <h1>Logged In</h1>
+  <h1>You are now logged In</h1>
+  <div class="login">
+    <a class="change_email" href="/change_email">Change email</a>
+  </div>
   <form action="/sessions" method="POST" class="user_form">
     <input type="hidden" name="_method" value="delete">
     <button class="user_button">Logout</button>

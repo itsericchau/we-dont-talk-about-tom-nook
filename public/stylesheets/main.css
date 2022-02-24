@@ -6,12 +6,15 @@ html {
 }
 body {
   background-color: khaki;
+  background: url(./background0.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 .navigation_bar {
   margin: 0 auto;
 }
 .navigation_bar_ul {
-  background-color: aquamarine;
+  border-radius: 10px;
+  background-color: #8fd6ba;
   border: 2px solid black;
   padding-left: 0;
   display: flex;
@@ -34,15 +37,16 @@ a {
 }
 .login {
   text-align: center;
+  padding: 10px;
 }
 .login a {
-  padding: 0 10px 0 10px;
+  padding: 10px;
   font-size: 2rem;
 }
 h1,
 h2 {
   text-align: center;
-  margin: 0;
+  margin: 5px 0 5px 0;
 }
 h1 {
   font-size: 3rem;
@@ -59,16 +63,19 @@ img {
   text-align: center;
 }
 .wishlist_items {
+  font-family: "Indie Flower", cursive;
   text-transform: capitalize;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .favourite_items {
+  font-family: "Indie Flower", cursive;
   text-transform: capitalize;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .bug_items {
+  font-family: "Indie Flower", cursive;
   text-transform: capitalize;
   margin: 0 auto;
   display: grid;
@@ -76,10 +83,9 @@ img {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .border {
-  background-color: antiquewhite;
+  background-color: #8fd6ba;
   border-radius: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px;
   border: 1px solid brown;
   display: grid;
   justify-items: center;
@@ -103,7 +109,7 @@ img {
 button:hover {
   opacity: 100%;
   cursor: url(./handpointer1.cur), auto;
-  background-color: aqua;
+  background-color: #ec7174;
 }
 #user_buttons:hover {
   opacity: 100%;

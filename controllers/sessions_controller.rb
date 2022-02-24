@@ -4,7 +4,6 @@ end
 
 post "/sessions" do
   username = params["username"]
-  # email = params["email"]
   password = params["password"]
   user = find_user_by_username(username)
   if user && BCrypt::Password.new(user["password_digest"]) == params["password"]

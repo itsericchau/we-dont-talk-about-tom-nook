@@ -5,11 +5,13 @@
       <span><%= art[1]["id"] %></span>
       <%= art[1]["name"]["name-USen"] %>
       <img src="<%= art[1]["image_uri"] %>" alt="">
-      <form action="/wishlist_arts" method="POST">
-        <input type="hidden" name="art_name" value="<%=art[1]["name"]["name-USen"]%>">
-        <input type="hidden" name="item_id" value="<%= art[1]["id"] %>">
-        <button>Add to wishlist</button>
-      </form>
+      <% if !!logged_in? %>
+        <form action="/wishlist_arts" method="POST">
+          <input type="hidden" name="art_name" value="<%=art[1]["name"]["name-USen"]%>">
+          <input type="hidden" name="item_id" value="<%= art[1]["id"] %>">
+          <button>Add to wishlist</button>
+        </form>
+      <%end%>
     </div>
   <%end%>
 </div>

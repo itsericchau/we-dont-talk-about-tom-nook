@@ -1,0 +1,9 @@
+<h1>Change email</h1>
+<form action="/change_email" method="POST" class="user_form">
+  <input type="hidden" name="_method" value="put">
+  <label for="">Current email</label>
+  <input type="text" name="current_email" value="<%=email%>">
+  <label for="">New email</label>
+  <input type="text" name="new_email">
+  <button>Submit</button>
+</form>

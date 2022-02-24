@@ -2,13 +2,15 @@
 <div class="bug_items">
   <% sea_creatures_api.each do |sea_creature| %>
     <div class="border">
-      <%= p sea_creature[1]["name"]["name-USen"] %>
+      <%= sea_creature[1]["name"]["name-USen"] %>
       <img src="<%= sea_creature[1]["icon_uri"] %>" alt="">
-      <form action="/wishlist_sea_creatures" method="POST">
-        <input type="hidden" name="sea_creature_name" value="<%=sea_creature[1]["name"]["name-USen"]%>">
-        <input type="hidden" name="item_id" value="<%= sea_creature[1]["id"] %>">
-        <button>Add to wishlist</button>
-      </form>
+      <% if !!logged_in? %>
+        <form action="/wishlist_sea_creatures" method="POST">
+          <input type="hidden" name="sea_creature_name" value="<%=sea_creature[1]["name"]["name-USen"]%>">
+          <input type="hidden" name="item_id" value="<%= sea_creature[1]["id"] %>">
+          <button>Add to wishlist</button>
+        </form>
+      <%end%>
     </div>
   <%end%>
 </div>

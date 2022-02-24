@@ -78,25 +78,6 @@ post "/wishlist_bugs" do
   redirect "/bugs"
 end
 
-# get "/fossils" do
-#   fossil = params["fossils"]
-#   fossils_api = HTTParty.get("https://acnhapi.com/v1/fossils/#{fossil}")
-#   erb :'pages/fossils',
-#       locals: {
-#         fossils_api: fossils_api,
-#       }
-# end
-
-# post "/wishlist_fossils" do
-#   fossil_name = params["fossil_name"]
-#   user_id = session["user_id"]
-#   item_id = params["item_id"]
-#   item_type = "fossils"
-#   wishlist = true
-#   insert_record(user_id, item_id, item_type, wishlist)
-#   redirect "/fossils"
-# end
-
 get "/sea_creatures" do
   sea_creature = params["sea_creatures"]
   sea_creatures_api = HTTParty.get("https://acnhapi.com/v1/sea/#{sea_creature}")

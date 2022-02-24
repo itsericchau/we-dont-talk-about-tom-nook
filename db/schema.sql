@@ -24,12 +24,20 @@ CREATE TABLE user_items(
     obtained BOOLEAN,
     wishlist BOOLEAN
 );
-INSERT INTO user_items(
-        user_id,
-        item_id,
-        item_type,
-        favourited,
-        obtained,
-        wishlist
-    )
-VALUES(1, 1, 'bugs', true, true, true);
+-- INSERT INTO user_items(
+--         user_id,
+--         item_id,
+--         item_type,
+--         favourited,
+--         obtained,
+--         wishlist
+--     )
+-- VALUES(1, 1, 'bugs', true, true, true);
+-- -- simple table
+CREATE TABLE user_items(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    item_id INTEGER,
+    item_type TEXT,
+    wishlist BOOLEAN
+);

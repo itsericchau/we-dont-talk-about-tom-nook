@@ -1,0 +1,10 @@
+<h1><%= username %>'s' Wishlist</h1>
+
+<a href="/">Return Home</a>
+<% wishlist.each do |item|%>
+<p>
+<% api = HTTParty.get("https://acnhapi.com/v1/#{item['item_type']}/#{item['id']}") %>
+<%= api["name"]["name-USen"] %>
+    <img src="<%= api["icon_uri"] %>" alt="">
+</p>
+<%end%>

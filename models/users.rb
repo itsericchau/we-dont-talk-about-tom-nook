@@ -17,3 +17,7 @@ end
 def find_user_by_id(id)
   run_sql("SELECT * FROM users WHERE id = $1", [id])[0]
 end
+
+def find_username_by_id(user_id)
+  run_sql("SELECT username FROM users WHERE id = $1", [user_id])[0]["username"]
+end

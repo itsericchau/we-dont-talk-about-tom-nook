@@ -2,9 +2,15 @@
 <a href="/">Return Home</a>
 <% fishes_api.each do |fish| %>
   <p>
-    <%= p fish[1]["name"]["name-USen"] %>
+    <%= fish[1]["name"]["name-USen"] %>
     <img src="<%= fish[1]["icon_uri"] %>" alt="">
+
+    <form action="/wishlist_fishes" method="POST">
+    <input type="hidden" name="fish_name" value="<%=fish[1]["name"]["name-USen"]%>">
+    <input type="hidden" name="item_id" value="<%= fish[1]["id"] %>">
     <button>Add to wishlist</button>
-    <button>Add to collected</button>
+    </form>
+    <%# <button>Add to collected</button> %>
   </p>
 <%end%>
+

@@ -8,6 +8,7 @@ enable :sessions
 
 require_relative "db/db"
 require_relative "models/users"
+require_relative "models/pages"
 require_relative "helpers/session_helper"
 require_relative "controllers/users_controller"
 
@@ -24,67 +25,90 @@ get "/fishes" do
       }
 end
 
-get "/villagers" do
-  villager = params["villagers"]
-  villagers_api = HTTParty.get("https://acnhapi.com/v1/villagers/#{villager}")
-  erb :'pages/villagers',
+post "/wishlist_fishes" do
+  fish_name = params["fish_name"]
+  user_id = session["user_id"]
+  item_id = params["item_id"]
+  item_type = "fish"
+  wishlist = true
+  insert_record(user_id, item_id, item_type, wishlist)
+  redirect "/fishes"
+end
+
+get "/wishlist" do
+  user_id = session["user_id"]
+  wishlist = get_wishlist()
+  api = HTTParty.get("https://acnhapi.com/v1/")
+  username = find_username_by_id(user_id)
+  erb :'users/wishlist',
       locals: {
-        villagers_api: villagers_api,
+        user_id: user_id,
+        wishlist: wishlist,
+        username: username,
       }
 end
 
-get "/bugs" do
-  bug = params["bugs"]
-  bugs_api = HTTParty.get("https://acnhapi.com/v1/bugs/#{bug}")
-  erb :'pages/bugs',
-      locals: {
-        bugs_api: bugs_api,
-      }
-end
+# get "/villagers" do
+#   villager = params["villagers"]
+#   villagers_api = HTTParty.get("https://acnhapi.com/v1/villagers/#{villager}")
+#   erb :'pages/villagers',
+#       locals: {
+#         villagers_api: villagers_api,
+#       }
+# end
 
-get "/fossils" do
-  fossil = params["fossils"]
-  fossils_api = HTTParty.get("https://acnhapi.com/v1/fossils/#{fossil}")
-  erb :'pages/fossils',
-      locals: {
-        fossils_api: fossils_api,
-      }
-end
+# get "/bugs" do
+#   bug = params["bugs"]
+#   bugs_api = HTTParty.get("https://acnhapi.com/v1/bugs/#{bug}")
+#   erb :'pages/bugs',
+#       locals: {
+#         bugs_api: bugs_api,
+#       }
+# end
 
-get "/arts" do
-  art = params["name"]
-  arts_api = HTTParty.get("https://acnhapi.com/v1/art/#{art}")
-  erb :'pages/arts',
-      locals: {
-        arts_api: arts_api,
-      }
-end
+# get "/fossils" do
+#   fossil = params["fossils"]
+#   fossils_api = HTTParty.get("https://acnhapi.com/v1/fossils/#{fossil}")
+#   erb :'pages/fossils',
+#       locals: {
+#         fossils_api: fossils_api,
+#       }
+# end
 
-post "/wishlist_art" do
-  art_name = params["name"]
-  art_id = params["id"]
-  item_type = params["item_type"]
-  user_id = sessions["user_id"]
-  wishlist = params["wishlist"]
-  arts_api = HTTParty.get("https://acnhapi.com/v1/art/#{art_name}")
-  insert_record(user_id, art_id, art_name, item_type, wishlist)
-  redirect "/"
-end
+# get "/arts" do
+#   art = params["name"]
+#   arts_api = HTTParty.get("https://acnhapi.com/v1/art/#{art}")
+#   erb :'pages/arts',
+#       locals: {
+#         arts_api: arts_api,
+#       }
+# end
 
-get "/songs" do
-  song = params["songs"]
-  songs_api = HTTParty.get("https://acnhapi.com/v1/songs/#{song}")
-  erb :'pages/songs',
-      locals: {
-        songs_api: songs_api,
-      }
-end
+# post "/wishlist_art" do
+#   art_name = params["name"]
+#   art_id = params["id"]
+#   item_type = params["item_type"]
+#   user_id = sessions["user_id"]
+#   wishlist = params["wishlist"]
+#   arts_api = HTTParty.get("https://acnhapi.com/v1/art/#{art_name}")
+#   insert_record(user_id, art_id, art_name, item_type, wishlist)
+#   redirect "/"
+# end
 
-get "/sea_creatures" do
-  sea_creature = params["sea_creatures"]
-  sea_creatures_api = HTTParty.get("https://acnhapi.com/v1/sea/#{sea_creature}")
-  erb :'pages/sea_creatures',
-      locals: {
-        sea_creatures_api: sea_creatures_api,
-      }
-end
+# get "/songs" do
+#   song = params["songs"]
+#   songs_api = HTTParty.get("https://acnhapi.com/v1/songs/#{song}")
+#   erb :'pages/songs',
+#       locals: {
+#         songs_api: songs_api,
+#       }
+# end
+
+# get "/sea_creatures" do
+#   sea_creature = params["sea_creatures"]
+#   sea_creatures_api = HTTParty.get("https://acnhapi.com/v1/sea/#{sea_creature}")
+#   erb :'pages/sea_creatures',
+#       locals: {
+#         sea_creatures_api: sea_creatures_api,
+#       }
+# end

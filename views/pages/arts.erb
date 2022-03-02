@@ -1,8 +1,7 @@
 <h1>Arts Page</h1>
 <div class="bug_items">
   <% arts_api.each do |art| %>
-    <div class="border">
-      <span><%= art[1]["id"] %></span>
+    <div class="border3">
       <%= art[1]["name"]["name-USen"] %>
       <img src="<%= art[1]["image_uri"] %>" alt="">
       <% if !!logged_in? %>

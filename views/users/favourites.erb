@@ -1,19 +1,66 @@
 <h1><%= username %>'s' Favourites</h1>
 <div class="favourite_items">
   <% favourites.each do |item|%>
-    <div class="border">
+    <div class="border4">
       <% api = HTTParty.get("https://acnhapi.com/v1/#{item['item_type']}/#{item['item_id']}") %>
       <%= api["name"]["name-USen"] %><br/>
       <%= api["name"]["name-JPja"] %>
-      <% if (item['item_type'] != 'songs') && (item['item_type'] != 'art') %>
-        <img src="<%= api["icon_uri"] %>" alt="">
-        <span><%= api["price"] %> Bells</span>
-      <%else%>
+      <% if item['item_type'] == 'art' %>
         <img src="<%= api["image_uri"] %>" alt="">
-        <span><%= api["buy-price"] %> Bells</span>
+        <span>Has Fake: <%= api["hasFake"] %></span>
+        <span>Buy Price: <%= api["buy-price"] %> Bells</span>
+        <span>Sell Price: <%= api["sell-price"] %> Bells</span>
+        <span>Museum Description: <%= api["museum-desc"] %></span>
+      <%elsif item['item_type'] == 'bugs'%>
+        <img src="<%= api["icon_uri"] %>" alt="">
+        <span>Availability Months North Hemisphere: <%= api["availability"]['month-northern'] %></span>
+        <span>Availability Months South Hemisphere: <%= api["availability"]['month-northern'] %></span>
+        <span>Hours active: <%= api["availability"]['time'] %></span>
+        <span>All day: <%= api["availability"]['isAllDay'] %></span>
+        <span>All Year: <%= api["availability"]['isAllYear'] %></span>
+        <span>Location: <%= api["availability"]['location'] %></span>
+        <span>Rarity: <%= api["availability"]['rarity'] %></span>
+        <span>Sell Price: <%= api["price"] %> Bells</span>
+        <span>Sell to Flick: <%= api["price-flick"] %> Bells</span>
+        <span><%= api["catch-phrase"] %></span>
+      <%elsif item['item_type'] == 'fish'%>
+        <img src="<%= api["icon_uri"] %>" alt="">
+        <span>Availability North Months Hemisphere: <%= api["availability"]['month-northern'] %></span>
+        <span>Availability South Months Hemisphere:<%= api["availability"]['month-northern'] %></span>
+        <span>Hours active: <%= api["availability"]['time'] %></span>
+        <span>All day: <%= api["availability"]['isAllDay'] %></span>
+        <span>All Year: <%= api["availability"]['isAllYear'] %></span>
+        <span>Location: <%= api["availability"]['location'] %></span>
+        <span>Rarity: <%= api["availability"]['rarity'] %></span>
+        <span>Shadow Size: <%= api["availability"]['shadow'] %></span>
+        <span>Sell Price: <%= api["price"] %> Bells</span>
+        <span>Sell to CJ: <%= api["price-cj"] %> Bells</span>
+        <span>Catch Phrase: <%= api["catch-phrase"] %></span>
+        <span>Museum Description: <%= api["museum-phrase"] %></span>
+      <%elsif item['item_type'] == 'sea'%>
+        <img src="<%= api["icon_uri"] %>" alt="">
+        <span>Availability North Months Hemisphere: <%= api["availability"]['month-northern'] %></span>
+        <span>Availability South Months Hemisphere:<%= api["availability"]['month-northern'] %></span>
+        <span>Hours active: <%= api["availability"]['time'] %></span>
+        <span>Speed: <%= api["speed"] %></span>
+        <span>Shadow Size: <%= api["availability"]['shadow'] %></span>
+        <span>Sell Price: <%= api["price"] %> Bells</span>
+        <span>Catch Phrase: <%= api["catch-phrase"] %></span>
+        <span>Museum Description: <%= api["museum-phrase"] %></span>
+      <%elsif item['item_type'] == 'songs'%>
+        <img src="<%= api["image_uri"] %>" alt="">
+        <span>Buy Price: <%= api["buy-price"] %> Bells</span>
+        <span>Sell Price: <%= api["sell-price"] %> Bells</span>
+        <span>Orderable: <%= api["isOrderable"] %></span>
+      <%elsif item['item_type'] == 'villagers'%>
+        <img src="<%= api["icon_uri"] %>" alt="">
+        <span>Personality: <%= api["personality"] %></span>
+        <span>Birthday: <%= api["bithday-string"] %></span>
+        <span>Species: <%= api["species"] %></span>
+        <span>Gender: <%= api["gender"] %></span>
+        <span>Catch Phrase: <%= api["catch-phrase"] %></span>
+      <% else %>
       <%end%>
-      <span><%= api["catch-phrase"] %></span>
-      <span><%= api[item] %></span>
       <form action="/remove_favourites" method="POST">
         <input type="hidden" name="_method" value="delete">
         <input type="hidden" name="id" value="<%=item['id']%>">

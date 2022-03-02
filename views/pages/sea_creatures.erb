@@ -1,7 +1,7 @@
 <h1>Sea Creatures Page</h1>
 <div class="bug_items">
   <% sea_creatures_api.each do |sea_creature| %>
-    <div class="border">
+    <div class="border2">
       <%= sea_creature[1]["name"]["name-USen"] %>
       <img src="<%= sea_creature[1]["icon_uri"] %>" alt="">
       <% if !!logged_in? %>

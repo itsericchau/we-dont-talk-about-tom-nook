@@ -24,3 +24,4 @@ How to pass data to and from ruby to html.
 ## Features to add in the future
 
 Edit username
+Javascript DOM manipulation

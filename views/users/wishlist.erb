@@ -1,7 +1,7 @@
 <h1><%= username %>'s Wishlist</h1>
 <div class="wishlist_items">
   <% wishlist.each do |item|%>
-    <div class="border">
+    <div class="border5">
       <% api = HTTParty.get("https://acnhapi.com/v1/#{item['item_type']}/#{item['item_id']}") %>
       <%= api["name"]["name-USen"] %><br/>
       <%= api["name"]["name-JPja"] %>

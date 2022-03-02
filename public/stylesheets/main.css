@@ -5,17 +5,27 @@ html {
   cursor: url(./handpointer0.cur), auto;
 }
 body {
+  margin: 0;
   background-color: khaki;
   background: url(./background0.jpg) no-repeat center center fixed;
   background-size: cover;
 }
+.blank_navigation {
+  width: 1200px;
+  height: 40px;
+}
 .navigation_bar {
-  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid green;
+  background-color: #8fd6ba;
+  padding-bottom: 5px;
+  z-index: 999;
 }
 .navigation_bar_ul {
-  border-radius: 10px;
-  background-color: #8fd6ba;
-  border: 2px solid black;
+  margin: 0;
   padding-left: 0;
   display: flex;
   list-style: none;
@@ -24,7 +34,7 @@ body {
 .navigation_bar_ul a {
   font-size: 1.5rem;
   font-family: "Indie Flower", cursive;
-  padding: 0 10px 0 10px;
+  padding: 10px;
 }
 .navigation_bar_ul li:hover {
   animation-name: pulse;
@@ -40,11 +50,15 @@ a {
   padding: 10px;
 }
 .login a {
+  color: white;
   padding: 10px;
   font-size: 2rem;
+  border: 1px solid black;
+  background-color: #8fd6ba;
 }
 h1,
-h2 {
+h2,
+h3 {
   text-align: center;
   margin: 5px 0 5px 0;
 }
@@ -55,26 +69,33 @@ h1 {
 h2 {
   font-family: "Indie Flower", cursive;
 }
+h3 {
+  font-family: "Indie Flower", cursive;
+}
 img {
   max-width: 128px;
 }
 .user_form,
 .user_button {
+  font-size: 2rem;
   text-align: center;
 }
 .wishlist_items {
+  padding: 0 20px 0 20px;
   font-family: "Indie Flower", cursive;
   text-transform: capitalize;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .favourite_items {
+  padding: 0 20px 0 20px;
   font-family: "Indie Flower", cursive;
   text-transform: capitalize;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 .bug_items {
+  padding: 0 20px 0 20px;
   font-family: "Indie Flower", cursive;
   text-transform: capitalize;
   margin: 0 auto;
@@ -82,15 +103,35 @@ img {
   justify-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.border {
-  background-color: #8fd6ba;
-  border-radius: 10px;
+.border,
+.border2,
+.border3,
+.border4,
+.border5 {
+  border-radius: 5px;
   padding: 5px;
   border: 1px solid brown;
   display: grid;
   justify-items: center;
   text-align: center;
 }
+.border {
+  background-color: #8fd6ba90;
+}
+.border2 {
+  background-color: #a4eaf690;
+}
+.border3 {
+  background-color: #ec717490;
+}
+.border4 {
+  background-color: #eaec7190;
+}
+.border5 {
+  background-color: #de71ec90;
+}
+.border3:hover,
+.border2:hover,
 .border:hover {
   animation-name: pulse;
   animation-duration: 1s;

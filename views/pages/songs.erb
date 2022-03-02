@@ -1,7 +1,7 @@
 <h1>Songs Page</h1>
 <div class="bug_items">
   <% songs_api.each do |song| %>
-    <div class="border">
+    <div class="border3">
       <%= song[1]["name"]["name-USen"] %>
       <img src="<%= song[1]["image_uri"] %>" alt="">
       <% if !!logged_in? %>

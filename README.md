@@ -1,9 +1,8 @@
 https://we-hate-tom-nook.herokuapp.com/
 
 # We Hate Tom Nook
-
-This project is an organiser for those who like to track your item collection in Animal Crossing: New Horizons
-
+This project is an organiser and tracker for those who like to organise your item collection in Animal Crossing: New Horizons
+![alt text](https://imgur.com/zLv86we.png)
 ## My plan / Approach
 
 Make a database with tables for users and user's custom selection of items.
@@ -19,9 +18,11 @@ Heroku App hosting website and database
 ## Lessons you learnt
 
 API keys are not always consistent with keys.
+Have more than one method to identify items in order for redundancy
 How to pass data to and from ruby to html.
 
 ## Features to add in the future
-
+Fossils page
+Furniture pages
 Edit username
 Javascript DOM manipulation

@@ -9,7 +9,7 @@ Make a database with tables for users and user's custom selection of items.
 User can select a wishlist of items as well as a favourited items list with more information and detail.
 Using ruby, sinatra, pg gem, httparty gem, postgresql we combine these utilities to make an app
 
-![Arts Page](https://imgur.com/AzHclXp.png) 
+![Arts Page](https://imgur.com/FhfvUY6.png) 
 ![Songs Page](https://imgur.com/DiF14e5.png)
 
 When user signs up, they can now log in and add things to their colelction. This will be unique to each user.

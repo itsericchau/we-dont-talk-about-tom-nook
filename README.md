@@ -2,13 +2,14 @@ https://we-hate-tom-nook.herokuapp.com/
 
 # We Hate Tom Nook
 This project is an organiser and tracker for those who like to organise your item collection in Animal Crossing: New Horizons
-![alt text](https://imgur.com/zLv86we.png)
-## My plan / Approach
+![Homepage](https://imgur.com/zLv86we.png)
 
+## My plan / Approach
 Make a database with tables for users and user's custom selection of items.
 User can select a wishlist of items as well as a favourited items list with more information and detail.
 Using ruby, sinatra, pg gem, httparty gem, postgresql we combine these utilities to make an app
 
+![Arts Page](https://imgur.com/AzHclXp.png)  |  ![Songs Page](https://imgur.com/DiF14e5.png)
 ## Cool tech that I used
 
 Httparty for API handling

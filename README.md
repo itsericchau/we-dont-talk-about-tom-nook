@@ -38,4 +38,4 @@ Fossils page
 Furniture pages
 Edit username & password editing
 Javascript DOM manipulation
-Able to famvourite on all pages
+Able to favourite on all pages

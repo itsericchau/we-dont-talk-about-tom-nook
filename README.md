@@ -2,7 +2,7 @@ Try the app! https://we-dont-talk-about-tom-nook.herokuapp.com/
 
 # We Hate Tom Nook
 This project is an organiser and tracker for those who like to organise your item collection in Animal Crossing: New Horizons
-![Homepage](https://imgur.com/zLv86we.png)
+![Homepage](https://imgur.com/XdS9tF2.png)
 
 ## My plan / Approach
 Make a database with tables for users and user's custom selection of items.

@@ -29,6 +29,7 @@ Heroku App hosting website and database
 Server talking to server can be slow at times
 API keys are not always consistent with keys
 Have more than one method to identify items in order for redundancy
+Createing, renaming, updating, deleteing on Heroku
 How to pass data to and from ruby to html
 How to successfully route and use queries to navigate the webpages
 Know how to check if a user is logged in

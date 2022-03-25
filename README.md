@@ -1,6 +1,6 @@
-Try the app! https://we-dont-talk-about-tom-nook.herokuapp.com/
+Try the app! https://wedonttalkabouttomnook.herokuapp.com/
 
-# We Don't Talk About Tom Nook
+# We Don't Talk About Tom Nook App
 This project is an organiser and tracker for those who like to organise your item collection in Animal Crossing: New Horizons
 ![Homepage](https://imgur.com/XdS9tF2.png)
 
@@ -35,6 +35,7 @@ This project is an organiser and tracker for those who like to organise your ite
 - How to pass data to and from ruby to html
 - How to successfully route and use queries to navigate the webpages
 - Know how to check if a user is logged in
+
 ## Features to add in the future
 - Fossils page
 - Furniture pages

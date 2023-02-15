@@ -1,4 +1,6 @@
-Try the app! https://wedonttalkabouttomnook.herokuapp.com/
+Try the app! https://we-dont-talk-about-tom-nook-production.up.railway.app/
+
+# Notes: Database currently does not work so login and favourites/wishlist are currently unavailable.
 
 # We Don't Talk About Tom Nook App
 This project is an organiser and tracker for those who like to organise your item collection in Animal Crossing: New Horizons
